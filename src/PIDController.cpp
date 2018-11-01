@@ -83,7 +83,7 @@ double PIDController::compute (double sensor, bool debug) {
   double error = setPoint - sensor;
   errSum += error * timeChange;
   if (doLimit) {
-    errSum = constrain(errSum, minOut * 2, maxOut * 2); 
+    errSum = constrain(errSum, minOut * 1.1, maxOut * 1.1); 
   }
   double dErr = (error - lastErr) / timeChange;
 
