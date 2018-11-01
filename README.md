@@ -11,6 +11,8 @@ First include the library.
 
 Then create an instance of the class.
 
+---
+
 ```java
 include <PIDController.h>
 PIDController pid;
@@ -32,13 +34,13 @@ void loop () {
 
 In the setup function, call:
 
-`pid.begin()` to initialize the object.
+* `pid.begin()` to initialize the object.
 
-`pid.setpoint(newSetpoint)` to set the wanted value.
+* `pid.setpoint(newSetpoint)` to set the wanted value.
 
-`pid.tune(kP, kI, kD)` to tune the controller.
+* `pid.tune(kP, kI, kD)` to tune the controller.
 
-`pid.limit(min, max)` to get rid of integral windup (nasty stuff), and to limit the output values from the controller
+* `pid.limit(min, max)` to get rid of integral windup (nasty stuff), and to limit the output values from the controller
 
 
 ***THIS ARTICLE IS NOT FINISHED YET***
