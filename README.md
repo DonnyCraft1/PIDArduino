@@ -2,6 +2,11 @@
 A simple PID library for Arduino
 
 ## Usage
-First include the library: `#include <PIDController.h>`
+```java
+include <PIDController.h>
+PIDController pid;
+```
 
-Create an instance of the class: `PIDController pid;` here called pid.
+First include the library.
+
+Then create an instance of the class.
