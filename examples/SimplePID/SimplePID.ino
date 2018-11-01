@@ -9,7 +9,7 @@ int outputPin   = 3;    // The pin the digital output PMW is connected to
 int sensorPin   = A0;   // The pin the analog sensor is connected to
 
 void setup () {
-  Serial.begin(9600);
+  Serial.begin(9600);   // Some methods require the Serial.begin() method to be called first
   pinMode(outputPin, OUTPUT);
   pinMode(sensorPin, INPUT);
   
