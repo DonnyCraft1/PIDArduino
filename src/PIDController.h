@@ -18,7 +18,7 @@ class PIDController {
     PIDController();
 
     // Methods - double
-    double compute(double input, String graph = NOGRAPH);
+    double compute(double input, String graph = NOGRAPH, String verbose = NOVERBOSE);
 
     // Methods - void
     void begin();

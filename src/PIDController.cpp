@@ -74,7 +74,7 @@ double PIDController::getOutput () {
 }
 
 
-double PIDController::compute (double sensor, String graph) {
+double PIDController::compute (double sensor, String graph, String verbose) {
   // Return false if it could not execute;
   // This is the actual PID algorithm executed every loop();
 
@@ -106,7 +106,7 @@ double PIDController::compute (double sensor, String graph) {
 
   // Draw the garph if GRAPH mode
   if (graph == GRAPH) {
-    printGraph(sensor);
+    printGraph(sensor, verbose);
   }
 
   // Return the current output
