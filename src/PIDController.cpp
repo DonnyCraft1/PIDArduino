@@ -13,7 +13,7 @@ PIDController::PIDController () {
   bool doConstrain;
   bool init;
 
-  // Constants - double
+  // Variables - double - tuining
   double Kp;
   double Ki;
   double Kd;
