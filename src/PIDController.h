@@ -7,13 +7,16 @@
   #include "WProgram.h"
 #endif
 
+#define GRAPH	"graph"
+#define NOGRAPH	"nograph"
+
 class PIDController {
   public:
     // Constructor
     PIDController();
 
     // Methods - double
-    double compute(double input, string graph = NOGRAPH);
+    double compute(double input, String graph = NOGRAPH);
 
     // Methods - void
     void begin();
@@ -24,13 +27,9 @@ class PIDController {
 
     // Methods - double, getters
     double getOutput();
-	
-	// Constants
-	const static string GRAPH;
-	const static string NOGRAPH;
   private:
     // Methods
-    void graph(double _sensor);
+    void printGraph(double _sensor);
     
     // Variables - long
     unsigned long lastTime;
