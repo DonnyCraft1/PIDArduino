@@ -21,6 +21,10 @@ PIDController::PIDController () {
   double minOut;
   double maxOut;
   double setPoint;
+  
+  // Constants
+  const static string GRAPH = "graph";
+  const static string NOGRAPH = "nograph";
 }
 
 void PIDController::begin () {
@@ -30,6 +34,10 @@ void PIDController::begin () {
   divisor = 10;
   doLimit = false;
   init = true;
+  
+  // Define the constants
+  GRAPH = "graph";
+  NOGRAPH = "nograph";
 }
 
 void PIDController::setpoint (double newSetpoint) {

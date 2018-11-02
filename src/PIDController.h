@@ -13,7 +13,7 @@ class PIDController {
     PIDController();
 
     // Methods - double
-    double compute(double input, bool debug=false);
+    double compute(double input, string graph = NOGRAPH);
 
     // Methods - void
     void begin();
@@ -24,6 +24,10 @@ class PIDController {
 
     // Methods - double, getters
     double getOutput();
+	
+	// Constants
+	const static string GRAPH;
+	const static string NOGRAPH;
   private:
     // Methods
     void graph(double _sensor);
