@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: Found a bug? Please follow the rules below when submitting an issue.
+about: Found a bug? If it hasn't been reported yet, please consider doing it!
 
 ---
 
