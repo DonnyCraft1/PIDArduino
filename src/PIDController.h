@@ -7,8 +7,8 @@
   #include "WProgram.h"
 #endif
 
-#define GRAPH	"graph"
-#define NOGRAPH	"nograph"
+#define GRAPH   "graph"
+#define NOGRAPH "nograph"
 
 class PIDController {
   public:
