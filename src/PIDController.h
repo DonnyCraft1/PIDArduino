@@ -33,8 +33,11 @@ class PIDController {
 
     // Variables - double
     double output;
+    double setPoint;
     double lastErr;
     double timeChanged;
+    double minOut;
+    double maxOut;
 
     // Variables - double, error variables
     double error;
@@ -45,13 +48,10 @@ class PIDController {
     bool doLimit;
     bool init;
 
-    // Variables - double - tuining
+    // Constants - double
     double Kp;
     double Ki;
     double Kd;
     double divisor;
-    double minOut;
-    double maxOut;
-    double setPoint;
 };
 #endif
