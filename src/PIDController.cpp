@@ -79,7 +79,7 @@ double PIDController::getOutput () {
 }
 
 
-double PIDController::compute (double sensor, bool debug) {
+double PIDController::compute (double sensor, string graph) {
   // Return false if it could not execute;
   // This is the actual PID algorithm executed every loop();
 
@@ -110,8 +110,8 @@ double PIDController::compute (double sensor, bool debug) {
   lastTime = now;
 
   // Draw the garph if debug mode
-  if (debug) {
-    graph(sensor);  
+  if (graph == GRAPH) {
+    graph(sensor);
   }
 
   // Return the current output
