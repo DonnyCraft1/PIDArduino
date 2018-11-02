@@ -31,7 +31,7 @@ class PIDController {
     double getOutput();
   private:
     // Methods
-    void printGraph(double _sensor);
+    void printGraph(double sensorInput, String verbose);
     
     // Variables - long
     unsigned long lastTime;
