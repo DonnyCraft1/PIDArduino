@@ -21,10 +21,6 @@ PIDController::PIDController () {
   double minOut;
   double maxOut;
   double setPoint;
-  
-  // Constants
-  const static string GRAPH = "graph";
-  const static string NOGRAPH = "nograph";
 }
 
 void PIDController::begin () {
@@ -34,10 +30,6 @@ void PIDController::begin () {
   divisor = 10;
   doLimit = false;
   init = true;
-  
-  // Define the constants
-  GRAPH = "graph";
-  NOGRAPH = "nograph";
 }
 
 void PIDController::setpoint (double newSetpoint) {
@@ -56,7 +48,7 @@ void PIDController::limit(double min, double max) {
   doLimit = true;
 }
 
-void PIDController::graph (double _sensor) {
+void PIDController::printGraph (double _sensor) {
   Serial.print(0);
   Serial.print(",");
   Serial.print(1023);
@@ -79,7 +71,7 @@ double PIDController::getOutput () {
 }
 
 
-double PIDController::compute (double sensor, string graph) {
+double PIDController::compute (double sensor, String graph) {
   // Return false if it could not execute;
   // This is the actual PID algorithm executed every loop();
 
@@ -109,9 +101,9 @@ double PIDController::compute (double sensor, string graph) {
   lastErr = error;
   lastTime = now;
 
-  // Draw the garph if debug mode
+  // Draw the garph if GRAPH mode
   if (graph == GRAPH) {
-    graph(sensor);
+    printGraph(sensor);
   }
 
   // Return the current output
