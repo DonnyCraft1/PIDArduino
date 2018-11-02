@@ -59,8 +59,7 @@ void PIDController::printGraph (double sensorInput, String verbose) {
     Serial.print(map(output, 0, 255, 0, 1023));
   }
   Serial.print(",");
-  Serial.print(sensorInput);
-  Serial.println("");
+  Serial.println(sensorInput);
 }
 
 
