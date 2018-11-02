@@ -49,14 +49,10 @@ void PIDController::limit(double min, double max) {
 }
 
 void PIDController::printGraph (double sensorInput, String verbose) {
-  Serial.print(0);
-  Serial.print(",");
-  Serial.print(1023);
-  Serial.print(",");
   Serial.print(setPoint);
   if (verbose == VERBOSE) {
     Serial.print(",");
-    Serial.print(map(output, 0, 255, 0, 1023));
+    Serial.print(output);
   }
   Serial.print(",");
   Serial.println(sensorInput);
