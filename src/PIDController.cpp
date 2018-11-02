@@ -48,14 +48,16 @@ void PIDController::limit(double min, double max) {
   doLimit = true;
 }
 
-void PIDController::printGraph (double _sensor) {
+void PIDController::printGraph (double _sensor, String verbose) {
   Serial.print(0);
   Serial.print(",");
   Serial.print(1023);
   Serial.print(",");
   Serial.print(setPoint);
-  Serial.print(",");
-  Serial.print(_sensor);
+  if (verbose == VERBOSE) {
+    Serial.print(",");
+    Serial.print(_sensor);
+  }
   Serial.print(",");
   Serial.println(map(output, 0, 255, 0, 1023));
 }

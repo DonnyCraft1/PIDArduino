@@ -7,8 +7,10 @@
   #include "WProgram.h"
 #endif
 
-#define GRAPH   "graph"
-#define NOGRAPH "nograph"
+#define GRAPH     "graph"
+#define NOGRAPH   "nograph"
+#define VERBOSE   "verbose"
+#define NOVERBOSE "noverbose"
 
 class PIDController {
   public:
