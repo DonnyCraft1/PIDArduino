@@ -48,7 +48,7 @@ void PIDController::limit(double min, double max) {
   doLimit = true;
 }
 
-void PIDController::graph (double _sensor) {
+void PIDController::printGraph (double _sensor) {
   Serial.print(0);
   Serial.print(",");
   Serial.print(1023);
@@ -71,7 +71,7 @@ double PIDController::getOutput () {
 }
 
 
-double PIDController::compute (double sensor, bool debug) {
+double PIDController::compute (double sensor, String graph) {
   // Return false if it could not execute;
   // This is the actual PID algorithm executed every loop();
 
@@ -101,9 +101,9 @@ double PIDController::compute (double sensor, bool debug) {
   lastErr = error;
   lastTime = now;
 
-  // Draw the garph if debug mode
-  if (debug) {
-    graph(sensor);  
+  // Draw the garph if GRAPH mode
+  if (graph == GRAPH) {
+    printGraph(sensor);
   }
 
   // Return the current output
