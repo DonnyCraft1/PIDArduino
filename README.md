@@ -1,5 +1,7 @@
 # PIDArduino
-A simple PID library for Arduino
+A simple PID controller library for Arduino
+
+*Warning, this library hasn't been properly tested yet. Bugs may occur*
 
 # Usage
 ```java
