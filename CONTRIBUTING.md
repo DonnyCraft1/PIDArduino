@@ -39,4 +39,4 @@ This includes:
 
 * The summary should be short and descriptive
 
-* The description *should* end with a period
+* The description should end with a period
