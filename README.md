@@ -5,7 +5,7 @@ A simple PID controller library for Arduino
 
 # Usage
 ```java
-include <PIDController.h>
+#include <PIDController.h>
 PIDController pid;
 ```
 
@@ -16,7 +16,7 @@ Then create an instance of the class.
 ---
 
 ```java
-include <PIDController.h>
+#include <PIDController.h>
 PIDController pid;
 
 void setup () {
