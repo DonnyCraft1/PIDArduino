@@ -74,6 +74,9 @@ double PIDController::compute (double sensor, String graph, String verbose) {
   // Return false if it could not execute;
   // This is the actual PID algorithm executed every loop();
 
+  // Failsafe, return if the begin() method hasn't been called
+  if (!init) return 0;
+
   // Calculate time difference since last time executed
   unsigned long now = millis();
   double timeChange = (double)(now - lastTime);
