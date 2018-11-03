@@ -37,6 +37,7 @@ void PIDController::setpoint (double newSetpoint) {
 }
 
 void PIDController::tune (double _Kp, double _Ki, double _Kd) {
+  if (_Kp < 0 || _Ki < 0 || _Kd < 0) return;
   Kp = _Kp;
   Ki = _Ki;
   Kd = _Kd;
