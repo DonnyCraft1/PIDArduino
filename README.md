@@ -42,7 +42,7 @@ In the setup function, call:
 
 * `pid.tune(kP, kI, kD)` to tune the controller.
 
-* `pid.limit(min, max)` to get rid of [integral windup](https://en.wikipedia.org/wiki/Integral_windup) (nasty stuff), and to limit the output values from the controller
+* `pid.limit(min, max)` to get rid of [integral windup](https://en.wikipedia.org/wiki/Integral_windup) (nasty stuff), and to limit the output values from the controller.
 
 
 ***THIS ARTICLE IS NOT FINISHED YET***
