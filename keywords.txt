@@ -2,16 +2,16 @@
 PIDController   KEYWORD1
 
 # Methods / functions
-begin           KEYWORD2
-tune            KEYWORD2
-limit           KEYWORD2
-setpoint        KEYWORD2
-minimize        KEYWORD2
-compute         KEYWORD2
-getOutput       KEYWORD2
+begin   KEYWORD2
+tune    KEYWORD2
+limit   KEYWORD2
+setpoint    KEYWORD2
+minimize    KEYWORD2
+compute KEYWORD2
+getOutput   KEYWORD2
 
 # CONSTANTS
-GRAPH           LITERAL1
-NOGRAPH         LITERAL1
-VERBOSE         LITERAL1
-NOVERBOSE       LITERAL1
+GRAPH   LITERAL1
+NOGRAPH LITERAL1
+VERBOSE LITERAL1
+NOVERBOSE   LITERAL1
