@@ -50,4 +50,4 @@ But remember to also merge it to the develop branch before deleting the *hotfix*
 
 * The summary should be short and descriptive
 
-* The description should end with a period
+* The description should explain all the changes you've made
