@@ -45,9 +45,6 @@ But remember to also merge it to the develop branch before deleting the *hotfix*
 # Commit message conventions
 
 * The summary should be [capitalized](https://en.wikipedia.org/wiki/Capitalization) (first letter uppercase)
-
 * The summary should *not* end with a period
-
 * The summary should be short and descriptive
-
 * The description should explain all the changes you've made
