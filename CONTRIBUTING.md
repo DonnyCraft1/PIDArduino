@@ -18,6 +18,8 @@ PIDArduino is an open source project and we love to recieve cotributions from ou
 
 *Please read up on the [gitflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) workflow before forking the repo if you plan on making a pull request*
 
+*We try to keep the master branch clean, and merge develop into master only on new releases*
+
 ---
 
 For something that is bigger than a one or two line fix:
