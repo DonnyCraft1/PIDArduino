@@ -14,7 +14,7 @@ PIDArduino is an open source project and we love to recieve cotributions from ou
 
 *Please do not edit the master branch, always use the [develop](https://github.com/DonnyCraft1/PIDArduino/tree/develop) branch or a new feature branch when contributing! The only exception is critical hotfixes.*
 
-*Please read up on the [gitflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) workflow before forking the repo if you plan on making a pull request. We try to keep the master branch clean, and merge develop into master only on new releases.*
+*Please read up on the [gitflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) workflow before forking the repo if you plan on making a pull request. We try to keep the master branch clean, and merge develop into master only on new releases. The only exception is documentation. It is merged into master and develop regardless the state of releases. You can think of it as a non-critical hotfix.*
 
 ---
 
