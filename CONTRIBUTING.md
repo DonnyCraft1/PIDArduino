@@ -14,6 +14,8 @@ PIDArduino is an open source project and we love to recieve cotributions from ou
 
 *Please do not edit the master branch, always use the [develop](https://github.com/DonnyCraft1/PIDArduino/tree/develop) branch or a new feature branch when contributing!*
 
+*The only exception is critical hotfixes*
+
 For something that is bigger than a one or two line fix:
 
 1. Create your own fork of the repo
