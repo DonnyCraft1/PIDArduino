@@ -22,7 +22,7 @@ For something that is bigger than a one or two line fix:
 
 1. First go to the [issue tracker](https://github.com/DonnyCraft1/PIDArduino/issues) and open a new issue and share your toughts about what you would like to change, either a bug you found or a feature you would like to implement
 2. Create your own fork of the repo
-3. Create a new branch from the develop branch called `feature/new-feature`, all lower-case and replacing `new-feature` with a descriptive name for the feature
+3. Create a new branch from the develop branch called `feature/new-feature`, all lower-case and replacing `new-feature` with a descriptive name for the feature. If it's a hotfix, create a new branch from the master branch and call it `hotfix/new-hotfix`, all lower-case and replacing `new-hotfix` with a descriptive name for the hotfix
 4. Do the changes in *your* fork
 5. If you like the fork and think the project could use it, consider a pull request
 6. Create a pull request with the [develop](https://github.com/DonnyCraft1/PIDArduino/tree/develop) branch as the *base* branch
