@@ -16,12 +16,18 @@ PIDArduino is an open source project and we love to recieve cotributions from ou
 
 *The only exception is critical hotfixes*
 
+*Please read up on the [gitflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) workflow before forking the repo if you plan on making a pull request*
+
+---
+
 For something that is bigger than a one or two line fix:
 
-1. Create your own fork of the repo
-2. Create a new branch from the develop branch called `feature/new-feature`, all lower-case and replacing `new-feature` with a descriptive name for the feature
-3. Do the changes in *your* fork
-4. If you like the fork and think the project could use it, consider a pull request
+1. First go to the [issue tracker](https://github.com/DonnyCraft1/PIDArduino/issues) and open a new issue and share your toughts about what you would like to change, either a bug you found or a feature you would like to implement
+2. Create your own fork of the repo
+3. Create a new branch from the develop branch called `feature/new-feature`, all lower-case and replacing `new-feature` with a descriptive name for the feature
+4. Do the changes in *your* fork
+5. If you like the fork and think the project could use it, consider a pull request
+6. Create a pull request with the [develop](https://github.com/DonnyCraft1/PIDArduino/tree/develop) branch as the *base* branch
 
 ---
 
@@ -32,6 +38,11 @@ This includes:
 * Spelling / grammar fixes
 * Typo correction, white space and formatting changes
 * Comment clean up
+
+---
+
+Critical bugs can be merged direclty into the master branch as a *hotfix*.
+But remember to also merge it to the develop branch before deleting the *hotfix* branch.
 
 # Commit message conventions
 
