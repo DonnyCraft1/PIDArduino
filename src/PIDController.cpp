@@ -52,13 +52,13 @@ double PIDController::getOutput () {
 }
 
 
-double PIDController::compute (double sensor, boolean graph, boolean verbose) {
+double PIDController::compute (int sensor, boolean graph, boolean verbose) {
   // Return false if it could not execute;
   // This is the actual PID algorithm executed every loop();
 
   // Calculate time difference since last time executed
   now = millis();
-  timeChange = (double)(now - lastTime);
+  timeChange = (int) (now - lastTime);
 
   // Calculate the error (proportional)
   error = setPoint - sensor;

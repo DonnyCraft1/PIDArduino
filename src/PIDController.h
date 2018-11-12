@@ -13,7 +13,7 @@ class PIDController {
     PIDController();
 
     // Methods - double
-    double compute(double input, boolean graph = false, boolean verbose = false);
+    double compute(int sensor, boolean graph = false, boolean verbose = false);
 
     // Methods - void
     void tune(double _Kp, double _Ki, double _Kd);
@@ -30,10 +30,12 @@ class PIDController {
     unsigned long lastTime;
     unsigned long now;
 
+    // Variables - int
+    int timeChange;
+    int output;
+
     // Variables - double
-    double output;
     double lastErr;
-    double timeChange;
 
     // Variables - double, error variables
     double error;
