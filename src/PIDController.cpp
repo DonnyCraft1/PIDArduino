@@ -36,9 +36,9 @@ void PIDController::limit(double min, double max) {
   maxOut = max;
 }
 
-void PIDController::printGraph (double sensorInput, String verbose) {
+void PIDController::printGraph (double sensorInput, boolean verbose) {
   Serial.print(sensorInput);
-  if (verbose == VERBOSE) {
+  if (verbose) {
     Serial.print(",");
     Serial.print(output);
   }
@@ -52,7 +52,7 @@ double PIDController::getOutput () {
 }
 
 
-double PIDController::compute (double sensor, String graph, String verbose) {
+double PIDController::compute (double sensor, boolean graph, boolean verbose) {
   // Return false if it could not execute;
   // This is the actual PID algorithm executed every loop();
 
@@ -80,7 +80,7 @@ double PIDController::compute (double sensor, String graph, String verbose) {
   lastTime = now;
 
   // Draw the garph if GRAPH mode
-  if (graph == GRAPH) {
+  if (graph) {
     printGraph(sensor, verbose);
   }
 

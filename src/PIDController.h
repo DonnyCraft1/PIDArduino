@@ -7,18 +7,13 @@
   #include "WProgram.h"
 #endif
 
-#define GRAPH     "graph"
-#define NOGRAPH   "nograph"
-#define VERBOSE   "verbose"
-#define NOVERBOSE "noverbose"
-
 class PIDController {
   public:
     // Constructor
     PIDController();
 
     // Methods - double
-    double compute(double input, String graph = NOGRAPH, String verbose = NOVERBOSE);
+    double compute(double input, boolean graph = false, boolean verbose = false);
 
     // Methods - void
     void tune(double _Kp, double _Ki, double _Kd);
@@ -29,7 +24,7 @@ class PIDController {
     double getOutput();
   private:
     // Methods
-    void printGraph(double sensorInput, String verbose);
+    void printGraph(double sensorInput, boolean verbose = false);
     
     // Variables - long
     unsigned long lastTime;
