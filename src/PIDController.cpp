@@ -87,13 +87,13 @@ double PIDController::compute (double sensor, String graph, String verbose) {
   // Calculate the error sum (integral)
   errSum += error * timeChange;
 
-  // Limit the output
+  // Calculate the derivative
+  double dErr = (error - lastErr) / timeChange;
+
+  // Limit the error sum (integral)
   if (doLimit) {
     errSum = constrain(errSum, minOut * 1.1, maxOut * 1.1); 
   }
-
-  // Calculate the derivative
-  double dErr = (error - lastErr) / timeChange;
 
   // Calculate the new output by adding all three elements together
   double newOutput = (Kp * error + Ki * errSum + Kd * dErr) / divisor;
