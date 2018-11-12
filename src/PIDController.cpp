@@ -11,7 +11,6 @@ PIDController::PIDController () {
 
   // Variables - bool
   bool doConstrain;
-  bool init;
 
   // Variables - double - tuining
   double Kp;
@@ -29,7 +28,6 @@ void PIDController::begin () {
   Kd = 1;
   divisor = 10;
   doLimit = false;
-  init = true;
 }
 
 void PIDController::setpoint (double newSetpoint) {
@@ -73,9 +71,6 @@ double PIDController::getOutput () {
 double PIDController::compute (double sensor, String graph, String verbose) {
   // Return false if it could not execute;
   // This is the actual PID algorithm executed every loop();
-
-  // Failsafe, return if the begin() method hasn't been called
-  if (!init) return 0;
 
   // Calculate time difference since last time executed
   unsigned long now = millis();

@@ -48,7 +48,6 @@ class PIDController {
 
     // Variables - bool
     bool doLimit;
-    bool init;
 
     // Variables - double - tuining
     double Kp;
