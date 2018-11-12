@@ -15,7 +15,6 @@ PIDController::PIDController () {
   Kp = 1;
   Ki = 1;
   Kd = 1;
-  divisor = 10;
   minOut = 0;
   maxOut = 255;
   setPoint = 0;
@@ -47,11 +46,6 @@ void PIDController::printGraph (double sensorInput, String verbose) {
   Serial.println(setPoint);
 }
 
-
-void PIDController::minimize (double newMinimize) {
-  divisor = newMinimize;
-}
-
 // Getters
 double PIDController::getOutput () {
   return output;
@@ -79,7 +73,7 @@ double PIDController::compute (double sensor, String graph, String verbose) {
   errSum = constrain(errSum, minOut - (minOut * 0.1), maxOut * 1.1 + (maxOut * 0.1));
 
   // Calculate the new output by adding all three elements together
-  output = constrain(((Kp * error + Ki * errSum + Kd * dErr) / divisor), minOut, maxOut);
+  output = constrain(((Kp * error + Ki * errSum + Kd * dErr) / 10), minOut, maxOut);
 
   // Update lastErr and lastTime to current values for use in next execution
   lastErr = error;
