@@ -81,7 +81,7 @@ double PIDController::compute (double sensor, String graph, String verbose) {
   unsigned long now = millis();
   double timeChange = (double)(now - lastTime);
 
-  // Calculate the error
+  // Calculate the error (proportional)
   double error = setPoint - sensor;
 
   // Calculate the error sum (integral)
