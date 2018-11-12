@@ -21,7 +21,6 @@ class PIDController {
     double compute(double input, String graph = NOGRAPH, String verbose = NOVERBOSE);
 
     // Methods - void
-    void begin();
     void tune(double _Kp, double _Ki, double _Kd);
     void limit(double min, double max);
     void setpoint(double newSetpoint);
@@ -35,11 +34,12 @@ class PIDController {
     
     // Variables - long
     unsigned long lastTime;
+    unsigned long now;
 
     // Variables - double
     double output;
     double lastErr;
-    double timeChanged;
+    double timeChange;
 
     // Variables - double, error variables
     double error;
@@ -47,7 +47,6 @@ class PIDController {
     double dErr;
 
     // Variables - bool
-    bool doLimit;
 
     // Variables - double - tuining
     double Kp;

@@ -2,32 +2,23 @@
 
 PIDController::PIDController () {
   // Variables - double
-  double output;
-  double lastErr;
-  double errSum;
+  output = 0;
+  lastErr = 0;
+  errSum = 0;
 
   // Variables - long
-  unsigned long lastTime;
+  lastTime = 0;
 
   // Variables - bool
-  bool doConstrain;
 
   // Variables - double - tuining
-  double Kp;
-  double Ki;
-  double Kd;
-  double divisor;
-  double minOut;
-  double maxOut;
-  double setPoint;
-}
-
-void PIDController::begin () {
   Kp = 1;
   Ki = 1;
   Kd = 1;
   divisor = 10;
-  doLimit = false;
+  minOut = 0;
+  maxOut = 255;
+  setPoint = 0;
 }
 
 void PIDController::setpoint (double newSetpoint) {
@@ -44,7 +35,6 @@ void PIDController::tune (double _Kp, double _Ki, double _Kd) {
 void PIDController::limit(double min, double max) {
   minOut = min;
   maxOut = max;
-  doLimit = true;
 }
 
 void PIDController::printGraph (double sensorInput, String verbose) {
@@ -73,32 +63,23 @@ double PIDController::compute (double sensor, String graph, String verbose) {
   // This is the actual PID algorithm executed every loop();
 
   // Calculate time difference since last time executed
-  unsigned long now = millis();
-  double timeChange = (double)(now - lastTime);
+  now = millis();
+  timeChange = (double)(now - lastTime);
 
   // Calculate the error (proportional)
-  double error = setPoint - sensor;
+  error = setPoint - sensor;
 
   // Calculate the error sum (integral)
   errSum += error * timeChange;
 
   // Calculate the derivative
-  double dErr = (error - lastErr) / timeChange;
+  dErr = (error - lastErr) / timeChange;
 
   // Limit the error sum (integral)
-  if (doLimit) {
-    errSum = constrain(errSum, minOut * 1.1, maxOut * 1.1); 
-  }
+  errSum = constrain(errSum, minOut - (minOut * 0.1), maxOut * 1.1 + (maxOut * 0.1));
 
   // Calculate the new output by adding all three elements together
-  double newOutput = (Kp * error + Ki * errSum + Kd * dErr) / divisor;
-
-  // If limit is specifyed, limit the output
-  if (doLimit) {
-    output = constrain(newOutput, minOut, maxOut);
-  } else {
-    output = newOutput;  
-  }
+  output = constrain(((Kp * error + Ki * errSum + Kd * dErr) / divisor), minOut, maxOut);
 
   // Update lastErr and lastTime to current values for use in next execution
   lastErr = error;
