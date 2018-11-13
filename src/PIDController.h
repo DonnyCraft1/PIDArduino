@@ -7,6 +7,8 @@
   #include "WProgram.h"
 #endif
 
+#include "Constants.h"
+
 class PIDController {
   public:
     // Constructor
