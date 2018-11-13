@@ -70,7 +70,7 @@ double PIDController::compute (int sensor, boolean graph, boolean verbose) {
   dErr = (error - lastErr) / timeChange;
 
   // Limit the error sum (integral)
-  errSum = constrain(errSum, minOut - (minOut * 0.1), maxOut * 1.1 + (maxOut * 0.1));
+  errSum = constrain(errSum, minOut - (minOut * 0.1), maxOut + (maxOut * 0.1));
 
   // Calculate the new output by adding all three elements together
   output = constrain(((Kp * error + Ki * errSum + Kd * dErr) / 10), minOut, maxOut);
