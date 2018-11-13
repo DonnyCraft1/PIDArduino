@@ -37,13 +37,18 @@ void PIDController::limit(double min, double max) {
 }
 
 void PIDController::printGraph (double sensorInput, boolean verbose) {
-  Serial.print(sensorInput);
   if (verbose) {
+    Serial.print(sensorInput);
     Serial.print(",");
-    Serial.print(output);
+    Serial.print(setPoint);
+    // VERBOSE
+    Serial.print(",");
+    Serial.println(output);
+  } else {
+    Serial.print(sensorInput);
+    Serial.print(",");
+    Serial.println(setPoint);
   }
-  Serial.print(",");
-  Serial.println(setPoint);
 }
 
 // Getters
