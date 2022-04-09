@@ -26,8 +26,10 @@ PIDController::PIDController () {
 void PIDController::begin () {
   Kp = 1;
   Ki = 1;
+  aKi = 1;
   Kd = 1;
   divisor = 10;
+  aKiDivisor = 1000;
   doLimit = false;
   init = true;
 }
@@ -64,6 +66,11 @@ void PIDController::minimize (double newMinimize) {
   divisor = newMinimize;
 }
 
+void PIDController::adaptiveRetune (double newFactor) {
+  aKiDivisor = newValue;
+  doAdaption = true;
+}
+
 // Getters
 double PIDController::getOutput () {
   return output;
@@ -78,19 +85,28 @@ double PIDController::compute (double sensor, String graph, String verbose) {
   if (!init) return 0;
 
   // Calculate time difference since last time executed
-  unsigned long now = millis();
+  unsigned long now = micros();
   double timeChange = (double)(now - lastTime);
+  
+  // Failsafe, return unchanged to prevent divide by 0 what results in NaN
+  if (timeChange < 1.0) return output;
 
   // Calculate error (P, I and D)
-  double error = setPoint - sensor;
+  error = setPoint - sensor;
+  
+  // Calculate adaptive Ki
+  if (doAdaption) {
+	aKi = setPoint / aKiDivisor;
+  }
+  
   errSum += error * timeChange;
   if (doLimit) {
     errSum = constrain(errSum, minOut * 1.1, maxOut * 1.1); 
   }
-  double dErr = (error - lastErr) / timeChange;
+  dErr = (error - lastErr) / timeChange;
 
   // Calculate the new output by adding all three elements together
-  double newOutput = (Kp * error + Ki * errSum + Kd * dErr) / divisor;
+  double newOutput = (Kp * error + Ki * aKi * errSum + Kd * dErr) / divisor;
 
   // If limit is specifyed, limit the output
   if (doLimit) {
